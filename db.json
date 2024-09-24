@@ -34,6 +34,13 @@
       "weight": 75,
       "height": 1.8,
       "id": 6
+    },
+    {
+      "name": "Marina",
+      "age": 28,
+      "weight": 62,
+      "height": 1.7,
+      "id": 7
     }
   ]
 }
