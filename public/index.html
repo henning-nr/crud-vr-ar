@@ -18,46 +18,46 @@
         </a-entity>
 
         <!-- Mensagem de feedback -->
-        <a-text id="feedback" value="Usuario atualizado!" visible="false" position="-1.5 0 -5" color="green"></a-text>
+        <a-text id="feedback" value="Usuario atualizado!" visible="false" position="-3 0.5 -5" color="green"></a-text>
 
         <!-- Cards CRUD -->
         <a-box id="post-card" position="-3 -1 -5" color="#4CAF50" crud-action="POST" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
-        <a-text value="POST" position="-3.3 -0.3 -5" color="#4CAF50"></a-text>
+        <a-text value="POST" position="-3.2 -0.3 -5" color="#4CAF50"></a-text>
 
-        <a-box id="get-card" position="-1.5 -1 -5" color="#FFC107" crud-action="GET" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
-        <a-text value="GET" position="-1.8 -0.3 -5" color="#FFC107"></a-text>
+        <a-box id="get-card" position="-2.25 -1 -5" color="#FFC107" crud-action="GET" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
+        <a-text value="GET" position="-2.45 -0.3 -5" color="#FFC107"></a-text>
 
-        <a-box id="put-card" position="0 -1 -5" color="#03A9F4" crud-action="PUT" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
-        <a-text value="PUT" position="-0.3 -0.3 -5" color="#03A9F4"></a-text>
+        <a-box id="put-card" position="-1.5 -1 -5" color="#03A9F4" crud-action="PUT" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
+        <a-text value="PUT" position="-1.7 -0.3 -5" color="#03A9F4"></a-text>
 
-        <a-box id="patch-card" position="1.5 -1 -5" color="#673AB7" crud-action="PATCH" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
-        <a-text value="PATCH" position="1.2 -0.3 -5" color="#673AB7"></a-text>
+        <a-box id="patch-card" position="-0.75 -1 -5" color="#673AB7" crud-action="PATCH" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
+        <a-text value="PATCH" position="-1.1 -0.3 -5" color="#673AB7"></a-text>
 
-        <a-box id="delete-card" position="3 -1 -5" color="#F44336" crud-action="DELETE" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
-        <a-text value="DELETE" position="2.7 -0.3 -5" color="#F44336"></a-text>
+        <a-box id="delete-card" position="0 -1 -5" color="#F44336" crud-action="DELETE" class="clickable" depth="0.5" height="0.5" width="0.5"></a-box>
+        <a-text value="DELETE" position="-0.4 -0.3 -5" color="#F44336"></a-text>
 
 
-        <a-entity camera look-controls position="0 1.6 -2">
+        <!--a-entity camera look-controls position="0 1.6 -2"-->
             <!-- Adicionar cursor para interação -->
-            <a-entity cursor="fuse: true; fuseTimeout: 1000" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            <!--a-entity cursor="fuse: true; fuseTimeout: 1000" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                       material="color: yellow; shader: flat" position="0 0 -1"></a-entity>
-        </a-entity>
+        </a-entity-->
 
         <!-- Formulario virtual para inserir dados -->
-        <a-plane position="-2 2 -6" width="3" height="2" color="#444F49" id="formulario">
-            <a-text value="Formulario de Usuario" position="-1 0.7 0" color="#9CBC7C"></a-text>
-            <a-text value="Nome:" position="-1 0.3 0" color=white></a-text>
-            <a-text id="nome" value="________" position="0 0.3 0" color="#white"></a-text>
-            <a-text value="Idade:" position="-1 0 0" color="#white"></a-text>
-            <a-text id="idade" value="________" position="0 0 0" color="#white"></a-text>
-            <a-text value="Peso:" position="-1 -0.3 0" color="#white"></a-text>
-            <a-text id="peso" value="________" position="0 -0.3 0" color="#white"></a-text>
-            <a-text value="Altura:" position="-1 -0.6 0" color="#white"></a-text>
-            <a-text id="altura" value="________" position="0 -0.6 0" color="#white"></a-text>
+        <a-plane position="-2 2 -6" width="3" height="2" color="#444F49" id="formulario" >
+            <a-text value="Formulario de Usuario" position="-1 0.7 0.1" color="#9CBC7C"></a-text>
+            <a-text value="Nome:" position="-1 0.3 0.1" color=white></a-text>
+            <a-text id="nome" value="________" position="0 0.3 0.1" color="#white"></a-text>
+            <a-text value="Idade:" position="-1 0 0.1" color="#white"></a-text>
+            <a-text id="idade" value="________" position="0 0 0.1" color="#white"></a-text>
+            <a-text value="Peso:" position="-1 -0.3 0.1" color="#white"></a-text>
+            <a-text id="peso" value="________" position="0 -0.3 0.1" color="#white"></a-text>
+            <a-text value="Altura:" position="-1 -0.6 0.1" color="#white"></a-text>
+            <a-text id="altura" value="________" position="0 -0.6 0.1" color="#white"></a-text>
         </a-plane>
 
         <!-- Lista de usuarios compactada com fundo branco e border-radius -->
-        <a-entity id="user-list" position="3 2 -5"></a-entity>
+        <a-entity id="user-list" position="3.5 2 -5"></a-entity>
 
     </a-scene>
 
@@ -65,7 +65,7 @@
         let selectedUserId = null; // Para armazenar o ID do usuario selecionado
 
         // URL do endpoint da API
-        const API_URL = 'https://refactored-carnival-wg9j595g75w29vrj-4000.app.github.dev/users';
+        const API_URL = 'https://glorious-space-eureka-rqgj54j655qcwv5-4000.app.github.dev/users';
 
         // Função para mostrar mensagem 3D e ocultar depois de um tempo
         function showMessage(message, color = 'green') {
@@ -114,7 +114,9 @@
             const randomUsers = [
                 { name: 'Ana', age: 22, weight: 55, height: 1.65 },
                 { name: 'Carlos', age: 30, weight: 75, height: 1.80 },
-                { name: 'Marina', age: 28, weight: 62, height: 1.70 }
+                { name: 'Marina', age: 28, weight: 62, height: 1.70 },
+                { name: 'Firpo', age: 21, weight: 69, height: 1.80 },
+                { name: 'Arthur', age: 20, weight: 62, height: 1.80 }
             ];
             const randomUser = randomUsers[Math.floor(Math.random() * randomUsers.length)];
 
@@ -226,20 +228,20 @@
 
                     users.forEach((user, index) => {
                         const userCard = document.createElement('a-box');
-                        userCard.setAttribute('color', '#000'); // Fundo preto
+                        userCard.setAttribute('color', '#444F49'); // Fundo preto
                         userCard.setAttribute('depth', '0.1');
                         userCard.setAttribute('height', '0.3');
                         userCard.setAttribute('width', '1.2'); // Tamanho ajustado ao nome
-                        userCard.setAttribute('position', `${(index % 3) * 1.5 - 2} ${-Math.floor(index / 3) * 0.5} 0`);
+                        userCard.setAttribute('position', `${(index % 2) * 1.5 - 2} ${-Math.floor(index / 2) * 0.5} 0`);
                         userCard.setAttribute('class', 'user-card clickable');
                         userCard.setAttribute('id', `user-${user.id}`);
-                        userCard.setAttribute('material', 'opacity: 0.8; shader: flat;');
+                        //userCard.setAttribute('material', 'opacity: 0.8; shader: flat;');
                         userCard.setAttribute('border-radius', '0.2'); // Arredondamento das bordas
 
                         const userText = document.createElement('a-text');
                         userText.setAttribute('value', user.name);
                         userText.setAttribute('position', '0 0 0.1');
-                        userText.setAttribute('color', 'black');
+                        userText.setAttribute('color', '#9CBC7C');
                         userText.setAttribute('align', 'center');
 
                         userCard.appendChild(userText);
