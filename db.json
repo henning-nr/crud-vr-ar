@@ -29,67 +29,39 @@
       "id": 5
     },
     {
-      "name": "Carlos",
-      "age": 30,
-      "weight": 75,
-      "height": 1.8,
-      "id": 6
+      "name": "Marina",
+      "age": 28,
+      "weight": 62,
+      "height": 1.7,
+      "id": 17
+    },
+    {
+      "name": "Thiagao",
+      "age": 28,
+      "weight": 72,
+      "height": 1.72,
+      "id": 18
+    },
+    {
+      "name": "Thiagao",
+      "age": 28,
+      "weight": 72,
+      "height": 1.72,
+      "id": 20
     },
     {
       "name": "Marina",
       "age": 28,
       "weight": 62,
       "height": 1.7,
-      "id": 7
-    },
-    {
-      "name": "Marina",
-      "age": 28,
-      "weight": 62,
-      "height": 1.7,
-      "id": 8
-    },
-    {
-      "name": "Ana",
-      "age": 22,
-      "weight": 55,
-      "height": 1.65,
-      "id": 9
-    },
-    {
-      "name": "Carlos",
-      "age": 30,
-      "weight": 75,
-      "height": 1.8,
-      "id": 10
-    },
-    {
-      "name": "Firpo",
-      "age": 21,
-      "weight": 69,
-      "height": 1.8,
-      "id": 11
-    },
-    {
-      "name": "Carlos",
-      "age": 30,
-      "weight": "75",
-      "height": 1.8,
-      "id": 12
-    },
-    {
-      "name": "Marina",
-      "age": 28,
-      "weight": 62,
-      "height": 1.7,
-      "id": 13
+      "id": 21
     },
     {
       "name": "Arthur",
       "age": 20,
       "weight": 62,
       "height": 1.8,
-      "id": 14
+      "id": 22
     }
   ]
 }
