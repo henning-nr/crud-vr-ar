@@ -57,7 +57,7 @@
         let selectedUserId = null; // Para armazenar o ID do usuario selecionado
 
         // URL do endpoint da API
-        const API_URL = 'https://cautious-winner-5x4pr4r4w5527wr9-4000.app.github.dev/users';
+        const API_URL = 'https://miniature-funicular-qjqw57w45p934777-4000.app.github.dev/users';
 
         // Função para mostrar mensagem 3D e ocultar depois de um tempo
         function showMessage(message, color = 'green') {
@@ -109,7 +109,8 @@
                 { name: 'Marina', age: 28, weight: 62, height: 1.70 },
                 { name: 'Firpo', age: 21, weight: 69, height: 1.80 },
                 { name: 'Arthur', age: 20, weight: 62, height: 1.80 },
-                { name: 'Thiagao', age: 28, weight: 72, height: 1.72}
+                { name: 'Thiagao', age: 28, weight: 72, height: 1.72},
+                { name: 'Henning', age: 32, weight: 78, height: 1.81}
             ];
             const randomUser = randomUsers[Math.floor(Math.random() * randomUsers.length)];
 
@@ -120,7 +121,7 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    showMessage('Usuario criado!');
+                    showMessage(`Usuario ${randomUser.name} criado!`);
                     loadUserList(); // Recarregar a lista de usuarios
                 })
                 .catch(error => showMessage('Erro ao criar usuario!', 'red'));
@@ -146,52 +147,61 @@
 
         // Função PUT (atualizar usuario)
         function updateUser(userId) {
-            if (!userId) {
-                showMessage('Selecione um usuario primeiro!', 'red');
-                return;
-            }
-            const userData = {
-                name: document.querySelector('#nome').getAttribute('value'),
-                age: document.querySelector('#idade').getAttribute('value'),
-                weight: document.querySelector('#peso').getAttribute('value'),
-                height: document.querySelector('#altura').getAttribute('value')
-            };
-
-            fetch(`${API_URL}/${userId}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(userData)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    showMessage('Usuario atualizado!');
-                    loadUserList();
-                })
-                .catch(error => showMessage('Erro ao atualizar usuario!', 'red'));
+        if (!userId) {
+            showMessage('Selecione um usuario primeiro!', 'red');
+            return;
         }
 
-        // Função PATCH (atualizar parcialmente usuario)
+        // Gera valores aleatórios para nome, idade, peso e altura
+        const randomNames = ['Lucas', 'Beatriz', 'Carlos', 'Marina', 'Joana', 'Paulo', 'Fernanda'];
+        const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
+
+        const randomAge = Math.floor(Math.random() * (60 - 18 + 1)) + 18;     // Idade entre 18 e 60 anos
+        const randomWeight = Math.floor(Math.random() * (100 - 50 + 1)) + 50; // Peso entre 50 e 100 kg
+        const randomHeight = (Math.random() * (2.0 - 1.5) + 1.5).toFixed(2);  // Altura entre 1.5 e 2.0 metros
+
+        const updatedUser = {
+            name: randomName,
+            age: randomAge,
+            weight: randomWeight,
+            height: randomHeight
+        };
+
+        fetch(`${API_URL}/${userId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedUser)
+        })
+            .then(response => response.json())
+            .then(data => showMessage(`Usuario atualizado! Nome: ${randomName}, Idade: ${randomAge}, Peso: ${randomWeight} kg, Altura: ${randomHeight} m`))
+            .catch(error => showMessage('Erro ao atualizar usuario!', 'red'));
+    }
+
+        // Função PATCH (atualizar apenas o peso do usuário)
         function patchUser(userId) {
-            if (!userId) {
-                showMessage('Selecione um usuario primeiro!', 'red');
-                return;
-            }
-            const userData = {
-                weight: document.querySelector('#peso').getAttribute('value')
-            };
-
-            fetch(`${API_URL}/${userId}`, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(userData)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    showMessage('Peso do usuario atualizado!');
-                    loadUserList();
-                })
-                .catch(error => showMessage('Erro ao atualizar peso do usuario!', 'red'));
+        if (!userId) {
+            showMessage('Selecione um usuario primeiro!', 'red');
+            return;
         }
+
+        // Gera valores aleatórios para peso e idade
+        const randomWeight = Math.floor(Math.random() * (100 - 50 + 1)) + 50; // Peso entre 50 e 100 kg
+        const randomAge = Math.floor(Math.random() * (60 - 18 + 1)) + 18;     // Idade entre 18 e 60 anos
+
+        const updatedData = {
+            weight: randomWeight,
+            age: randomAge
+        };
+
+        fetch(`${API_URL}/${userId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedData)
+        })
+            .then(response => response.json())
+            .then(data => showMessage(`Peso e idade atualizados!`))
+            .catch(error => showMessage('Erro ao atualizar peso e idade!', 'red'));
+    }
 
         // Função DELETE (excluir usuario)
         function deleteUser(userId) {
@@ -251,7 +261,7 @@
                 .catch(error => console.error('Erro ao carregar a lista de usuarios:', error));
         }
 
-        // Carregar a lista de usuarios ao iniciar
+        // Carregar a lista dae usuarios ao iniciar
         window.addEventListener('load', loadUserList);
     </script>
 </body>
